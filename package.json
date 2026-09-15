@@ -1,0 +1,9 @@
+{
+  "name": "agent-orchestrator-voice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Agent Orchestrator daily listening room",
+  "scripts": {
+    "dev": "npx serve ."
+  }
+}

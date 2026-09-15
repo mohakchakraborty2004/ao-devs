@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#16120e" />
+    <title>Agent Orchestrator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@500;600;700;800&family=Noto+Sans+Devanagari:wght@700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="experience" aria-label="Agent Orchestrator daily listening room">
+      <div class="backdrops" aria-hidden="true">
+        <div class="backdrop backdrop--outgoing"><img class="backdrop__image" alt="" /></div>
+        <div class="backdrop backdrop--incoming"><img class="backdrop__image" alt="" /></div>
+        <div class="grain"></div>
+        <div class="vignette"></div>
+      </div>
+
+      <section class="clock" aria-live="polite">
+        <p class="clock__time" id="time">--:--</p>
+        <p class="clock__day" id="day">Loading day</p>
+      </section>
+
+      <a class="site-link" href="https://orchestrator.inc" target="_blank" rel="noreferrer" aria-label="Visit orchestrator.inc">
+        <img src="assets/logo/orchestrator-inc.png" alt="" />
+        <span>orchestrator.inc</span>
+      </a>
+
+      <section class="identity" aria-label="Agent Orchestrator">
+        <h1>एजेंट<br />ऑर्केस्ट्रेटर</h1>
+      </section>
+
+      <section class="player" aria-label="Audio player">
+        <a class="voice-link" href="https://discord.gg/NjSM4bCayu" target="_blank" rel="noreferrer">
+          <span class="voice-link__dot" aria-hidden="true"></span>
+          <span id="voice-time">Join voice at 10:00 PM IST</span>
+        </a>
+        <div class="player__meta">
+          <p class="player__eyebrow" id="playlist-name">Today’s playlist</p>
+          <p class="player__track" id="track-title">Add a playlist to start listening</p>
+        </div>
+
+        <div class="player__controls">
+          <button class="icon-button" id="previous" type="button" aria-label="Previous track">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M18 6l-8 6 8 6V6Z" /></svg>
+          </button>
+          <button class="play-button" id="play" type="button" aria-label="Play">
+            <svg class="play-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 5 11 7-11 7V5Z" /></svg>
+            <svg class="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h3v14H7zm7 0h3v14h-3z" /></svg>
+          </button>
+          <button class="icon-button" id="next" type="button" aria-label="Next track">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 8 6-8 6V6Zm12-1v14" /></svg>
+          </button>
+        </div>
+
+        <div class="player__timeline">
+          <span id="elapsed">0:00</span>
+          <input id="seek" type="range" min="0" max="100" value="0" aria-label="Seek through track" />
+          <span id="duration">0:00</span>
+        </div>
+        <div id="youtube-player" aria-hidden="true"></div>
+      </section>
+    </main>
+    <script src="app.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+  </body>
+</html>
