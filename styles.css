@@ -330,9 +330,9 @@ input[type="range"] {
 
   .player__eyebrow { font-size: .5rem; }
   .player__track { font-size: .7rem; }
-  .icon-button { height: 2.2rem; width: 2.2rem; }
-  .play-button { height: 2.7rem; width: 2.7rem; }
-  .play-button svg { height: 1.4rem; width: 1.4rem; }
+  .icon-button { height: 2.75rem; width: 2.75rem; }
+  .play-button { height: 3rem; width: 3rem; }
+  .play-button svg { height: 1.5rem; width: 1.5rem; }
 
   .site-link { right: 1rem; top: 1rem; font-size: .5rem; gap: .25rem; }
   .site-link img { height: 1.15rem; width: 1.15rem; }
