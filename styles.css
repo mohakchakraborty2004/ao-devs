@@ -252,15 +252,115 @@ input[type="range"] {
   min-width: 0;
 }
 
-@media (max-width: 530px) {
-  .experience { padding: 1.5rem; }
-  .identity { margin-top: -1.5rem; }
-  .player { border-radius: 1.35rem; gap: .5rem; padding: .75rem .9rem; }
-  .site-link { font-size: .57rem; gap: .3rem; }
-  .site-link img { height: 1.35rem; width: 1.35rem; }
-  .icon-button { display: none; }
+/* -------------------------------------------------------
+   Tablet (≤ 768px)
+   ------------------------------------------------------- */
+@media (max-width: 768px) {
+  .experience { padding: clamp(1.2rem, 3.5vw, 2.5rem); }
+  .identity h1 { font-size: clamp(3rem, 9vw, 6rem); }
+  .player { gap: .55rem 1rem; }
 }
 
+/* -------------------------------------------------------
+   Mobile (≤ 530px)
+   ------------------------------------------------------- */
+@media (max-width: 530px) {
+  .experience { padding: 1.25rem; }
+  .identity { margin-top: -1.5rem; }
+
+  /* Player: stack meta above controls for cleaner narrow layout */
+  .player {
+    border-radius: 1.35rem;
+    gap: .5rem;
+    padding: .75rem .9rem;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .player__meta { text-align: center; width: 100%; }
+  .player__track { white-space: normal; }
+  .player__eyebrow { margin-bottom: .15rem !important; }
+
+  .player__controls { justify-content: center; }
+
+  /* Voice link: allow text wrapping on narrow screens */
+  .voice-link {
+    font-size: .58rem;
+    padding: .45rem .65rem;
+    white-space: normal;
+    text-align: center;
+    max-width: calc(100% - 2rem);
+    line-height: 1.35;
+  }
+
+  /* Bigger touch targets for mobile */
+  .icon-button { height: 2.5rem; width: 2.5rem; }
+  .play-button { height: 3rem; width: 3rem; }
+  .play-button svg { height: 1.6rem; width: 1.6rem; }
+
+  .site-link { font-size: .57rem; gap: .3rem; }
+  .site-link img { height: 1.35rem; width: 1.35rem; }
+
+  .clock__time { font-size: clamp(1rem, 4vw, 1.4rem); }
+  .clock__day { font-size: .58rem; }
+}
+
+/* -------------------------------------------------------
+   Extra-small phones (≤ 380px)
+   ------------------------------------------------------- */
+@media (max-width: 380px) {
+  .experience { padding: 1rem; }
+  .identity { margin-top: -1rem; }
+  .identity h1 { font-size: clamp(2.4rem, 12vw, 3.5rem); }
+
+  .player {
+    border-radius: 1.1rem;
+    padding: .6rem .7rem;
+    gap: .4rem;
+  }
+
+  .voice-link {
+    font-size: .52rem;
+    padding: .4rem .55rem;
+    top: -2.4rem;
+  }
+
+  .voice-link__dot { height: .35rem; width: .35rem; }
+
+  .player__eyebrow { font-size: .5rem; }
+  .player__track { font-size: .7rem; }
+  .icon-button { height: 2.75rem; width: 2.75rem; }
+  .play-button { height: 3rem; width: 3rem; }
+  .play-button svg { height: 1.5rem; width: 1.5rem; }
+
+  .site-link { right: 1rem; top: 1rem; font-size: .5rem; gap: .25rem; }
+  .site-link img { height: 1.15rem; width: 1.15rem; }
+}
+
+/* -------------------------------------------------------
+   Landscape phones / short viewports (≤ 530px, landscape)
+   ------------------------------------------------------- */
+@media (max-width: 530px) and (orientation: landscape) {
+  .experience {
+    padding: .75rem 1.25rem;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .identity { margin-top: 0; }
+  .identity h1 { font-size: clamp(2rem, 7vw, 4rem); }
+
+  .voice-link { top: -2.2rem; }
+
+  .player {
+    padding: .55rem .75rem;
+    gap: .35rem;
+  }
+}
+
+/* -------------------------------------------------------
+   Reduced motion
+   ------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
